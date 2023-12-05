@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "product": "Tijolo",
+      "value": "50",
+      "description": "Esse é um tijolo.",
+      "id": 1
+    },
+    {
+      "product": "Maçaneta",
+      "value": "40",
+      "description": "Essa é uma maçaneta.",
+      "id": 2
+    },
+    {
+      "product": "Chuveiro",
+      "value": "100",
+      "description": "Esse é um chuveiro.",
+      "id": 3
+    },
+    {
+      "product": "Cadeira",
+      "value": "200",
+      "description": "Essa é uma cadeira.",
+      "id": 4
+    },
+    {
+      "product": "Martelo",
+      "value": "30",
+      "description": "Esse é um martelo.",
+      "id": 5
+    },
+    {
+      "product": "Chuveiro",
+      "value": "100",
+      "description": "Mais um chuveiro.",
+      "id": 6
+    }
+  ]
+}

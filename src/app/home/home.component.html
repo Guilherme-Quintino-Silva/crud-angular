@@ -1,0 +1,35 @@
+<div class="container" *ngIf="sendProductTrue">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Produto inserido!</h4>
+        <p>Um novo produto foi inserido na sua lista.</p>
+    </div>
+</div>
+<div class="container my-4 d-flex justify-content-between align-items-center">
+    <h2>Cadastre um novo produto aqui</h2>
+    <a routerLink="list">Veja os produtos inseridos</a>
+</div>
+<div class="container my-4">
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Produto</label>
+            <input type="text" class="form-control" name="Produto"
+                [(ngModel)]="obj.product" (ngModelChange)="dispareFunction()" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Valor do produto</label>
+            <input type="text" class="form-control" name="Valor"
+                [(ngModel)]="obj.value" (ngModelChange)="dispareFunction()" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descrição do produto</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="obj.description" name="Description"
+                (ngModelChange)="dispareFunction()"></textarea>
+        </div>
+        <div class="mb-3">
+            <button (click)="sendForm()" [disabled]="buttonDisabled" class="btn btn-primary mb-2">Enviar dados</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
