@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
         this.obj = data;
         setTimeout(() => {
           this.onSpinnerBollean = false;
-        }, 1000);
+        }, 800);
       },
       error: (error) => console.log(error),
       complete: () => console.log('Complete!'),
