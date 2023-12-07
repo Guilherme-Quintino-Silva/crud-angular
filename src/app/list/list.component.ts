@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class ListComponent implements OnInit {
   public list: Array<Product> = [];
   public onSpinnerBollean: boolean = true;
+  public titleError: string = 'Houve algum problema ao retornar os dados, tente novamente mais tarde.';
+  public errorBoolean: boolean = false;
   constructor(
     public insertAndGet: InsertAnDgetProductsService,
     public router: Router
@@ -22,9 +24,13 @@ export class ListComponent implements OnInit {
         this.list = data;
         setTimeout(() => {
           this.onSpinnerBollean = false;
-        }, 1000);
+        }, 800);
       },
-      error: (error) => console.log(error),
+      error: (error) => {
+        console.log(error);
+        this.errorBoolean = true;
+        this.onSpinnerBollean = false;
+      },
       complete: () => console.log('Complete!'),
     })
   }

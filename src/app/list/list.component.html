@@ -1,4 +1,8 @@
 <app-spinning [spinnerBollean]="onSpinnerBollean"></app-spinning>
+<div *ngIf="errorBoolean" class="container alert alert-danger d-flex justify-content-between" role="alert">
+    <span>{{ titleError }}</span>
+    <i class="fa-solid fa-info"></i>
+</div>
 <div class="container my-3" *ngIf="list.length > 0; else templateList">
     <div *ngFor="let item of list;" class="d-flex align-items-center list">
         <div>{{ item.product }}</div>
