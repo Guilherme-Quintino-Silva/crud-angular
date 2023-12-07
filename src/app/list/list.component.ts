@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   public list: Array<Product> = [];
+  public onSpinnerBollean: boolean = true;
   constructor(
     public insertAndGet: InsertAnDgetProductsService,
     public router: Router
@@ -17,7 +18,12 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.insertAndGet.getProduct().subscribe({
-      next: (data: Array<Product>) => this.list = data,
+      next: (data: Array<Product>) => {
+        this.list = data;
+        setTimeout(() => {
+          this.onSpinnerBollean = false;
+        }, 1000);
+      },
       error: (error) => console.log(error),
       complete: () => console.log('Complete!'),
     })

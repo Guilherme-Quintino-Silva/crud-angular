@@ -1,11 +1,12 @@
+<app-spinning [spinnerBollean]="onSpinnerBollean"></app-spinning>
 <div class="container my-3" *ngIf="list.length > 0; else templateList">
     <div *ngFor="let item of list;" class="d-flex align-items-center list">
         <div>{{ item.product }}</div>
         <div>{{ item.value }}</div>
         <div>{{ item.description }}</div>
         <div class="buttons d-flex flex-row-reverse">
-            <button class="btn btn-danger" (click)="remove(item.id)">deletar</button>
-            <button class="btn btn-light mx-2" (click)="edit(item.id)">Editar</button>
+            <button class="btn btn-danger" (click)="remove(item.id)"><i class="fa-solid fa-trash"></i></button>
+            <button class="btn btn-light mx-2" (click)="edit(item.id)"><i class="fa-solid fa-pencil"></i></button>
         </div>
     </div>
 </div>

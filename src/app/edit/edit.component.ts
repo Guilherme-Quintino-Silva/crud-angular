@@ -12,6 +12,7 @@ export class EditComponent implements OnInit {
   public buttonDisabled: boolean = true;
   public id!: string | null;
   public obj: any;
+  public onSpinnerBollean: boolean = true;
   constructor(
     public route: ActivatedRoute,
     public insertAndGet: InsertAnDgetProductsService,
@@ -21,14 +22,19 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.insertAndGet.readProduct(this.id).subscribe({
-      next: (data: Array<Product>) => this.obj = data,
+      next: (data: Array<Product>) => {
+        this.obj = data;
+        setTimeout(() => {
+          this.onSpinnerBollean = false;
+        }, 1000);
+      },
       error: (error) => console.log(error),
       complete: () => console.log('Complete!'),
     })
   }
   public editForm(): void {
     this.insertAndGet.updateProduct(this.id, this.obj).subscribe({
-      next: () => 'Sucesso!',
+      next: () => console.log('Sucesso!'),
       error: (error) => console.log(error),
       complete: () => 'Sucessfully'
     })

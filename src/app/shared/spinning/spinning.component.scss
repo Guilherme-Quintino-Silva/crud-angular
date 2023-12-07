@@ -1,0 +1,14 @@
+.container-spinner {
+    position: absolute;
+    margin: 0 auto;
+    background: #fefefef2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 96vh;
+    z-index: 999;
+    .spinner-grow {
+        margin: 0px 7px;
+    }
+}

@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { EditComponent } from './edit/edit.component';
 import { UrlConfig } from 'src/env/UrlConfig';
+import { SpinningComponent } from './shared/spinning/spinning.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UrlConfig } from 'src/env/UrlConfig';
     ListComponent,
     FooterComponent,
     HeaderComponent,
-    EditComponent
+    EditComponent,
+    SpinningComponent
   ],
   imports: [
     BrowserModule,
